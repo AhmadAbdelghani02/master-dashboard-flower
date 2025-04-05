@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\GiftBox;
 use App\Models\Product;
 use App\Models\Review;
+use App\Models\Payment;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
@@ -89,11 +90,27 @@ class AdminDashboardController extends Controller
                     'product' => $review->product->name
                 ];
             });
+
+
+            // Get recent payments for the dashboard widget
+    $recentPayments = Payment::with('order')
+    ->orderBy('payment_date', 'desc')
+    ->limit(5)
+    ->get();
+
+// Add payment stats to the dashboard
+$paymentStats = [
+'total_payments' => Payment::count(),
+'completed_payments' => Payment::where('status', 'completed')->count(),
+'failed_payments' => Payment::where('status', 'failed')->count(),
+'pending_payments' => Payment::where('status', 'pending')->count(),
+'total_amount' => Payment::where('status', 'completed')->sum('amount'),
+];
         
         return view('admin.dashboard', compact(
             'totalOrders', 'totalUsers', 'totalGiftBoxes', 'totalRevenue',
             'orderGrowth', 'userGrowth', 'giftBoxGrowth', 'revenueGrowth',
-            'recentOrders', 'lowStockProducts', 'recentReviews'
+            'recentOrders', 'lowStockProducts', 'recentReviews', 'recentPayments', 'paymentStats'
         ));
     }
     

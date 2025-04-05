@@ -133,7 +133,7 @@ class UserController extends Controller
             'first_name' => 'required|string|max:50',
             'last_name' => 'required|string|max:50',
             'phone' => 'nullable|string|max:20',
-            'is_admin' => 'sometimes|boolean',
+            'is_admin' => 'sometimes|in:on,1,0',
         ]);
 
         $user->email = $validated['email'];

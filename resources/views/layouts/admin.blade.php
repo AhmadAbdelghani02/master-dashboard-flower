@@ -24,56 +24,58 @@
                 </div>
                 <div class="flex flex-col flex-grow overflow-y-auto">
                     <nav class="flex-1 px-2 py-4 space-y-1">
-                        <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-white rounded-md bg-gray-700 hover:bg-gray-600">
+                        <x-admin-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
                             {{-- {{ route('admin.dashboard') }} --}}
                             <i class="fas fa-home mr-3"></i>
                             Dashboard
-                        </a>
-                        <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">
-                            {{-- {{ route('admin.users') }} --}}
+                        </x-admin-link>
+
+                        <x-admin-link :href="route('admin.users.index')" :active="request()->routeIs('admin.users.index')">
                             <i class="fas fa-users mr-3"></i>
                             Users
-                        </a>
-                        <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">
-                            {{-- {{ route('admin.products') }} --}}
-                            <i class="fas fa-box mr-3"></i>
+                        </x-admin-link>
+                        <x-admin-link :href="route('admin.products.index')" :active="request()->routeIs('admin.products.index')">
+                        <i class="fas fa-box mr-3"></i>
                             Products
-                        </a>
-                        <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">
-                            {{-- {{ route('admin.categories') }} --}}
+                        </x-admin-link>
+                        <x-admin-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.index')">
+                            {{-- {{ route('admin.dashboard') }} --}}
                             <i class="fas fa-tag mr-3"></i>
                             Categories
-                        </a>
-                        <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">
-                            {{-- {{ route('admin.orders') }} --}}
+                        </x-admin-link>
+
+                        <x-admin-link :href="route('admin.orders.index')" :active="request()->routeIs('admin.orders.index')">
+                            {{-- {{ route('admin.dashboard') }} --}}
                             <i class="fas fa-shopping-cart mr-3"></i>
                             Orders
-                        </a>
-                        <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">
-                            {{-- {{ route('admin.gift-boxes') }} --}}
+                        </x-admin-link>
+                        <x-admin-link :href="route('admin.gift-boxes.index')" :active="request()->routeIs('admin.gift-boxes.index')">
+                            {{-- {{ route('admin.dashboard') }} --}}
                             <i class="fas fa-gift mr-3"></i>
                             Gift Boxes
-                        </a>
-                        <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">
+                        </x-admin-link>
+                        <x-admin-link :href="route('admin.promotions.index')" :active="request()->routeIs('admin.promotions.index')">
                             {{-- {{ route('admin.promotions') }} --}}
                             <i class="fas fa-percent mr-3"></i>
                             Promotions
-                        </a>
+                        </x-admin-link>
                         <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">
                             {{-- {{ route('admin.reviews') }} --}}
                             <i class="fas fa-star mr-3"></i>
                             Reviews
                         </a>
-                        <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">
-                            {{-- {{ route('admin.shipments') }} --}}
+
+                        <x-admin-link :href="route('admin.shipments.index')" :active="request()->routeIs('admin.shipments.index')">
+                            {{-- {{ route('admin.promotions') }} --}}
                             <i class="fas fa-truck mr-3"></i>
                             Shipments
-                        </a>
-                        <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">
-                            {{-- {{ route('admin.payments') }} --}}
+                        </x-admin-link>
+
+                        <x-admin-link :href="route('admin.payments.index')" :active="request()->routeIs('admin.payments.index')">
+                            {{-- {{ route('admin.promotions') }} --}}
                             <i class="fas fa-credit-card mr-3"></i>
                             Payments
-                        </a>
+                        </x-admin-link>
                     </nav>
                 </div>
             </div>
@@ -174,7 +176,7 @@
                 <div class="mt-5 flex-1 h-0 overflow-y-auto">
                     <nav class="px-2 space-y-1">
                         <!-- Same links as sidebar -->
-                        <a href="#" class="group flex items-center px-2 py-2 text-base font-medium rounded-md text-white bg-gray-700">
+                        <a href="{{ route('admin.dashboard') }}" class="group flex items-center px-2 py-2 text-base font-medium rounded-md text-white bg-gray-700">
                             {{-- {{ route('admin.dashboard') }} --}}
                             <i class="fas fa-home mr-4 text-gray-300"></i>
                             Dashboard

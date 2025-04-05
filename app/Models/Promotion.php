@@ -21,6 +21,14 @@ class Promotion extends Model
         'usage_count'
     ];
 
+    protected $casts = [
+        'start_date' => 'datetime',
+        'end_date' => 'datetime',
+        'is_active' => 'boolean',
+        'minimum_order' => 'decimal:2',
+        'discount_value' => 'decimal:2',
+    ];
+    
     public $timestamps = false;
 
     // Relationships
