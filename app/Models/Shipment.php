@@ -16,6 +16,14 @@ class Shipment extends Model
         'status'
     ];
 
+
+    protected $casts = [
+        'shipping_date' => 'datetime',
+        'estimated_delivery' => 'datetime',
+        'actual_delivery' => 'datetime',
+    ];
+
+    
     public $timestamps = false;
 
     // Relationships

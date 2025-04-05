@@ -29,7 +29,6 @@ class User extends Authenticatable
         'is_admin'
     ];
 
-    public $timestamps = false;
 
     protected $casts = [
         'created_at' => 'datetime',

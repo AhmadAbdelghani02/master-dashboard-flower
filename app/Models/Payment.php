@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Payment extends Model
 {
     protected $primaryKey = 'payment_id';
+    protected $table = 'payments';
     
     protected $fillable = [
         'order_id',
@@ -19,6 +20,10 @@ class Payment extends Model
     const CREATED_AT = 'payment_date';
     const UPDATED_AT = null;
 
+    protected $casts = [
+        'payment_date' => 'datetime',
+        'amount' => 'decimal:2',
+    ];
     // Relationships
     public function order()
     {
