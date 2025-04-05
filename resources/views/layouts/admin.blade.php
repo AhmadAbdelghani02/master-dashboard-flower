@@ -59,11 +59,12 @@
                             <i class="fas fa-percent mr-3"></i>
                             Promotions
                         </x-admin-link>
-                        <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white">
-                            {{-- {{ route('admin.reviews') }} --}}
+
+                        <x-admin-link :href="route('admin.reviews.index')" :active="request()->routeIs('admin.reviews.index')">
+                            {{-- {{ route('admin.promotions') }} --}}
                             <i class="fas fa-star mr-3"></i>
                             Reviews
-                        </a>
+                        </x-admin-link>
 
                         <x-admin-link :href="route('admin.shipments.index')" :active="request()->routeIs('admin.shipments.index')">
                             {{-- {{ route('admin.promotions') }} --}}
